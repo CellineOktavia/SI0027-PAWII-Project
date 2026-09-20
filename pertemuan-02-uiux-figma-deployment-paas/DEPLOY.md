@@ -4,11 +4,11 @@ Ikuti langkah berikut untuk mendeploy folder `static-site/` setelah TODO pada `s
 
 ## Opsi A: Deploy ke Vercel
 
-- [ ] 1. Buat akun di [vercel.com](https://vercel.com) menggunakan akun GitHub.
-- [ ] 2. Push folder `static-site/` ke repositori GitHub Anda sendiri.
-- [ ] 3. Pada dashboard Vercel, pilih **Add New Project** lalu hubungkan repositori tersebut.
-- [ ] 4. Biarkan pengaturan default (tidak perlu build command untuk HTML statis), lalu klik **Deploy**.
-- [ ] 5. Catat URL yang diberikan Vercel setelah deployment selesai.
+- [✓] 1. Buat akun di [vercel.com](https://vercel.com) menggunakan akun GitHub.
+- [✓] 2. Push folder `static-site/` ke repositori GitHub Anda sendiri.
+- [✓] 3. Pada dashboard Vercel, pilih **Add New Project** lalu hubungkan repositori tersebut.
+- [✓] 4. Biarkan pengaturan default (tidak perlu build command untuk HTML statis), lalu klik **Deploy**.
+- [✓] 5. Catat URL yang diberikan Vercel setelah deployment selesai.
 
 ## Opsi B: Deploy ke Netlify
 

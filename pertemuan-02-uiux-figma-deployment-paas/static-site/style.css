@@ -1,66 +1,110 @@
-/* Mini Project - Pertemuan 2: styling halaman statis sebelum deployment */
+/* Mini Project - Pertemuan 2: Styling Halaman Statis Modern */
 
+/* NOTE: ADA TAMBAHAN DESAIN DI LUAR TO DO LIST */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* TODO 1: beri latar belakang gelap & padding pada .header, .logo bold & besar,
-   nav rata kanan dengan jarak antar link */
+body {
+  background-color: #f4f7f6;
+  color: #333;
+  line-height: 1.6;
+}
+
+/*  TODO 1: beri latar belakang gelap & padding pada .header, .logo bold & besar, nav rata kanan dengan jarak antar link */
 .header {
-  background-color: #333;
-  padding: 20px;
+  background: linear-gradient(135deg, #1f2937, #111827);
+  color: #fff;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .header .logo {
   font-weight: bold;
-  font-size: 24px;
-}
-
-.header nav {
-  text-align: right;
+  font-size: 26px;
+  letter-spacing: 1px;
+  color: #38bdf8;
 }
 
 .header nav a {
-  margin-left: 20px;
+  margin-left: 25px;
   text-decoration: none;
-  color: #fff;
+  color: #cbd5e1;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-/* TODO 2: buat .hero rata tengah, judul besar (h1), tombol .cta menonjol dengan
-   warna latar mencolok dan padding yang nyaman diklik */
+.header nav a:hover {
+  color: #38bdf8;
+}
+
+/* TODO 2: buat .hero rata tengah, judul besar (h1), tombol .cta menonjol dengan warna latar mencolok dan padding yang nyaman diklik */
 .hero {
   text-align: center;
-  padding: 40px 20px;
+  padding: 80px 20px;
+  background: #ffffff;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.hero h1 {
+  font-size: 36px;
+  color: #1e293b;
+  margin-bottom: 15px;
 }
 
 .cta {
-  background-color: #007bff;
+  background: linear-gradient(135deg, #0284c7, #0369a1);
   color: #fff;
-  padding: 10px 20px;
+  padding: 12px 28px;
   border: none;
-  border-radius: 5px;
+  border-radius: 30px;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
+  box-shadow: 0 4px 10px rgba(2, 132, 199, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* TODO 3: buat .features menjadi grid 3 kolom dengan jarak antar kartu,
-   .feature-card diberi latar belakang lembut & sudut membulat */
+.cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(2, 132, 199, 0.4);
+}
+
+/* TODO 3: buat .features menjadi grid 3 kolom dengan jarak antar kartu, .feature-card diberi latar belakang lembut & sudut membulat */
 .features {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px 60px 20px;
 }
 
 .feature-card {
-  background-color: #f8f9fa;
-  border-radius: 5px;
-  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-top: 4px solid #38bdf8;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
 }
 
 .footer {
   text-align: center;
-  padding: 24px;
-  color: #666;
+  padding: 30px;
+  background-color: #1e293b;
+  color: #94a3b8;
+  font-size: 14px;
 }

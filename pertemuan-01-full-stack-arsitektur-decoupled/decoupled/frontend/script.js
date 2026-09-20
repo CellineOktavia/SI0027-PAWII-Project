@@ -14,8 +14,14 @@ async function muatProduk() {
   const container = document.getElementById("daftar-produk");
 
   // TODO 1: fetch data dari API_URL, ubah menjadi JSON
-
+  const response = await fetch(API_URL);
+  const data = await response.json();
   // TODO 2: loop hasilnya, buat elemen <li>, lalu append ke `container`
+  data.forEach((p) => {
+    const li = document.createElement("li");
+    li.textContent = `${p.nama} : Rp ${p.harga.toLocaleString()}`;
+    container.appendChild(li);
+  });
 }
 
 muatProduk();

@@ -10,22 +10,53 @@
 /* TODO 1: beri latar belakang gelap & padding pada .header, .logo bold & besar,
    nav rata kanan dengan jarak antar link */
 .header {
+  background-color: #333;
+  padding: 20px;
+}
+
+.header .logo {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.header nav {
+  text-align: right;
+}
+
+.header nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #fff;
 }
 
 /* TODO 2: buat .hero rata tengah, judul besar (h1), tombol .cta menonjol dengan
    warna latar mencolok dan padding yang nyaman diklik */
 .hero {
+  text-align: center;
+  padding: 40px 20px;
 }
 
 .cta {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 /* TODO 3: buat .features menjadi grid 3 kolom dengan jarak antar kartu,
    .feature-card diberi latar belakang lembut & sudut membulat */
 .features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
 .feature-card {
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  padding: 20px;
 }
 
 .footer {

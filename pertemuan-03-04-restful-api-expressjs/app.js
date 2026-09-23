@@ -25,7 +25,7 @@ app.get("/mahasiswa", (req, res) => {
 //Latihan 1
 // Buat fungsi untuk mengambil data mahasiswa aktif, dengan alamat: mahasiswa/aktif
 app.get("/mahasiswa/aktif", (req, res) => {
-  const mahasiswaAktif = mahasiswa.filter((m) => m.status === "aktif" || m.status === "Aktif");
+  const mahasiswaAktif = mahasiswa.filter((m) => m.status.toLowerCase() === "aktif");
   res.json(mahasiswaAktif);
 });
 

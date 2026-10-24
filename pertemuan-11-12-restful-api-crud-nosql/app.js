@@ -3,6 +3,7 @@
 // Jalankan dengan: npm install && npm start (setelah menyalin .env.example menjadi .env)
 
 // TODO: require('express-async-errors') di baris PALING ATAS, sebelum require express
+require("express-async-errors");
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
@@ -20,6 +21,7 @@ app.use("/mahasiswa", mahasiswaRoutes);
 app.use("/prodi", prodiRoutes);
 
 // TODO: pasang errorHandler dengan app.use(errorHandler) di sini, PALING AKHIR
+app.use(errorHandler);
 
 mongoose
   .connect(process.env.MONGODB_URI)

@@ -18,6 +18,14 @@ const DATA_MAHASISWA = [
 
 function DaftarMahasiswaPage() {
   // TODO: buat state keyword dengan useState('')
+  const [mahasiswa] = useState([
+    { id: 1, nama: 'Andi', nim: '2024001' },
+    { id: 2, nama: 'Budi', nim: '2024002' },
+  ]);
+
+  return mahasiswa.map((m) => (
+    <MahasiswaCard key={m.id} nama={m.nama} nim={m.nim} />
+  ));
 
   // TODO: hitung mahasiswaTersaring - filter DATA_MAHASISWA berdasarkan
   // apakah m.nama.toLowerCase() mengandung keyword.toLowerCase()

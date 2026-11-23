@@ -92,6 +92,32 @@ function MahasiswaForm({ onTambah }) {
       </select>
       {touched.kelas && errors.kelas && <span className="error">{errors.kelas}</span>}
 
+      {/* TAMBAH JENIS KELAMIN PILIHAN RADIO BUTTON */}
+      <div className="radio-group">
+        <label>
+          <input
+            type="radio"
+            name="jenisKelamin"
+            value="Laki-laki"
+            checked={form.jenisKelamin === "Laki-laki"}
+            onChange={handleChange}
+            onBlur={handleBlur}
+          />
+          Laki-laki
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="jenisKelamin"
+            value="Perempuan"
+            checked={form.jenisKelamin === "Perempuan"}
+            onChange={handleChange}
+            onBlur={handleBlur}
+          />
+          Perempuan
+        </label>
+      </div>
+
       <button type="submit" disabled={Object.keys(validate(form)).length > 0}>
         Tambah
       </button>

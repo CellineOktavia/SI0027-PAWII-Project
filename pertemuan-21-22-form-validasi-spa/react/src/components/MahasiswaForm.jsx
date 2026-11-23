@@ -6,12 +6,21 @@ import { useState } from "react";
 function validate(form) {
   const errors = {};
   // TODO: jika form.nama kosong (setelah di-trim), set errors.nama = 'Nama wajib diisi'
+  if (!form.nama.trim()) {
+    errors.nama = "Nama wajib diisi";
+  }
   // TODO: jika form.nim TIDAK cocok pola 7 digit angka (/^\d{7}$/), set errors.nim = 'NIM harus 7 digit angka'
+  if(!form.nim.match(/^\d{7}$/)) {
+    errors.nim = "NIM harus 7 digit angka";
+  }
+  if (!form.kelas.trim()) {
+    errors.kelas = "Kelas wajib diisi";
+  }
   return errors;
 }
 
 function MahasiswaForm({ onTambah }) {
-  const [form, setForm] = useState({ nama: "", nim: "" });
+  const [form, setForm] = useState({ nama: "", nim: "", kelas: "" });
   const [errors, setErrors] = useState({});
   const [touched, setTouched] = useState({});
 
@@ -29,11 +38,21 @@ function MahasiswaForm({ onTambah }) {
   function handleSubmit(e) {
     e.preventDefault();
     // TODO: panggil validate(form), simpan hasilnya ke variabel & ke setErrors()
+    const validationErrors = validate(form);
+    setErrors(validationErrors);
     // TODO: set touched jadi { nama: true, nim: true }
+    setTouched({ nama: true, nim: true });
     // TODO: jika masih ada error (Object.keys(...).length > 0), hentikan dengan return
+    if (Object.keys(validationErrors).length > 0) {
+      return;
+    }
 
     // TODO: panggil onTambah({ id: Date.now(), ...form })
+    onTambah({ id: Date.now(), ...form });
     // TODO: kosongkan kembali form, touched, dan errors
+    setForm({ nama: "", nim: "" });
+    setTouched({});
+    setErrors({});
   }
 
   return (
@@ -59,6 +78,19 @@ function MahasiswaForm({ onTambah }) {
         />
         {touched.nim && errors.nim && <span className="error">{errors.nim}</span>}
       </div>
+
+      <select className="select-field"
+        name="kelas"
+        value={form.kelas}
+        onChange={handleChange}
+        onBlur={handleBlur}
+      >
+        <option value="">Pilih Kelas</option>
+        <option value="TI-1A">TI-1A</option>
+        <option value="TI-1B">TI-1B</option>
+        <option value="TI-1C">TI-1C</option>
+      </select>
+      {touched.kelas && errors.kelas && <span className="error">{errors.kelas}</span>}
 
       <button type="submit" disabled={Object.keys(validate(form)).length > 0}>
         Tambah

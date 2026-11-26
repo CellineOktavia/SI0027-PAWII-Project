@@ -25,7 +25,7 @@ exports.login = async (req, res) => {
   // TODO: ambil username & password dari req.body
   const { username, password } = req.body;
   // TODO: cari user dengan User.findOne({ username })
-  const user = await User.findOne(username); //Pakai findOne karena username itu unique (yakin cuman 1)
+    const user = await User.findOne({ username }); //Pakai findOne karena username itu unique (yakin cuman 1)
   //   jika tidak ada -> throw { status: 401, message: 'Username/password salah' }
   if (!user) {
     throw { status: 404, message: "Username Anda salah..." };
